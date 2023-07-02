@@ -10,6 +10,13 @@ def lists():
     my_lists.add_row(["Fillet", "P" + str(70)])
     my_lists.add_row(["Exit", "Press X"])
     print(my_lists)
+def to_pay():
+    amount = int(input("Enter your pay: "))
+    change = amount - total
+    if change < 0:
+        print("Your pay is not sufficient. You can't have the dish! ")
+    else:
+        print("Your change is " + str(change))
 
 # welcome message
 print("------------ WELCOME TO PY-RECEIPT SERVICE ------------")
@@ -39,6 +46,7 @@ try:
     # tables with new calculated values
     table.add_row(["TOTAL", total, quantity])
     print(table)
+    to_pay()
 except NameError as nerror:
     print(nerror)
 # end program
