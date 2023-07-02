@@ -1,10 +1,12 @@
-# importing modules for valid pattern
+
 def adding_data():
+    # adding value in the database base on input
     database = open("../files/database.txt", "a")
     database.write("Name: " + name + "\nEmail: " + email + "\nContact: " + contact)
     database.write("\n----------------------------------\n")
     database.close()
 def check():
+    #checking if the value exists in the file
     value = input("Type the value you want to check: ")
     with open("../files/database.txt", "r") as file:
         for line in file:
@@ -15,6 +17,7 @@ def check():
         # still figuring out the logic...
 def choose():
     choose = input("Wanna check if the value exists in database? [Y, N] ")
+    # to accept both upper and lower case value
     choose.lower()
     if choose == "y":
         check()
