@@ -2,12 +2,12 @@ from prettytable import PrettyTable
 # creating lists of menu
 def lists():
     my_lists = PrettyTable(["Menu", "Price"])
-    my_lists.add_row(["Menudo", "P" + str(60)])
-    my_lists.add_row(["Adobo", "P" + str(55)])
-    my_lists.add_row(["Kaldereta", "P" + str(50)])
-    my_lists.add_row(["Munggo", "P" + str(30)])
-    my_lists.add_row(["Sinigang", "P" + str(40)])
-    my_lists.add_row(["Fillet", "P" + str(70)])
+    my_lists.add_row(["Menudo", f"P{60}"])
+    my_lists.add_row(["Adobo", f"P{55}"])
+    my_lists.add_row(["Kaldereta", f"P{50}"])
+    my_lists.add_row(["Munggo", f"P{30}"])
+    my_lists.add_row(["Sinigang", f"P{40}"])
+    my_lists.add_row(["Fillet", f"P{70}"])
     my_lists.add_row(["Exit", "Press X"])
     print(my_lists)
 def to_pay():
@@ -16,7 +16,7 @@ def to_pay():
     if change < 0:
         print("Your pay is not sufficient. You can't have the dish! ")
     else:
-        print("Your change is " + str(change))
+        print(f"Your change is {change}")
 
 # welcome message
 print("------------ WELCOME TO PY-RECEIPT SERVICE ------------")
@@ -24,7 +24,7 @@ table = PrettyTable(["Dish", "Price", "Quantity"])
 total = 0
 lists()
 try:
-    while(1):
+    while True:
         # try-except block for unseen variables
         try:
             name_dish = input("Enter a dish: ")
@@ -36,7 +36,6 @@ try:
                 # store all value in total
                 total += price * quantity
                 table.add_row([name_dish, price, quantity])
-                quantity += quantity
                 continue
             elif name_dish == "x":
                 break
@@ -44,10 +43,11 @@ try:
             print(error)
 
     # tables with new calculated values
-    table.add_row(["TOTAL", total, quantity])
+    table.add_row(["TOTAL", total, "----"])
+
     print(table)
     to_pay()
-except NameError as nerror:
-    print(nerror)
+except NameError:
+    print("Please make sure to buy before exiting!")
 # end program
 print("Thanks! Come Again!")
