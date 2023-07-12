@@ -22,6 +22,7 @@ def to_pay():
 print("------------ WELCOME TO PY-RECEIPT SERVICE ------------")
 table = PrettyTable(["Dish", "Price", "Quantity"])
 total = 0
+quantity_total = 0
 lists()
 try:
     while True:
@@ -35,6 +36,7 @@ try:
 
                 # store all value in total
                 total += price * quantity
+                quantity_total += quantity
                 table.add_row([name_dish, price, quantity])
                 continue
             elif name_dish == "x":
@@ -43,7 +45,7 @@ try:
             print(error)
 
     # tables with new calculated values
-    table.add_row(["TOTAL", total, "----"])
+    table.add_row(["TOTAL", total, quantity_total])
 
     print(table)
     to_pay()
