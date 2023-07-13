@@ -2,7 +2,7 @@ def adding_data():
     # adding value in the database base on input
     database = open("../files/database.txt", "a")
     # writing the inputted value in this format
-    database.write("Name: " + name + "\nEmail: " + email + "\nContact: " + contact)
+    database.write(f"Name: {name} \nEmail: {email} \nContact: {contact}")
     database.write("\n----------------------------------\n")
     database.close()
 def check():
