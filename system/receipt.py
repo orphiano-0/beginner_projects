@@ -1,4 +1,5 @@
 from prettytable import PrettyTable
+import time
 # creating lists of menu
 def lists():
     my_lists = PrettyTable(["Menu", "Price"])
@@ -43,10 +44,11 @@ try:
                 break
         except ValueError as error:
             print(error)
-
+    # adding loading feature
+    print("Calculating the total...")
+    time.sleep(2.2)
     # tables with new calculated values
     table.add_row(["TOTAL", total, quantity_total])
-
     print(table)
     to_pay()
 except NameError:
