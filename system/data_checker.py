@@ -13,14 +13,13 @@ def check():
         check = file.read()
         # check if the value is present in a file
         if value in check:
-            print("Found it!")
+            print(f"The value {value} does exist in the database.")
         else:
-            print("The value does not exist in database.")
+            print(f"The value {value} does not exist in the database.")
 
 def choose():
-    choose = input("Wanna check if the value exists in database? [Y, N] ")
     # to accept both upper and lower case value
-    choose.lower()
+    choose = input("Wanna check if the value exists in database? [Y, N] ").lower()
     if choose == "y":
         check()
     else:
