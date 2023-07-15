@@ -1,14 +1,11 @@
 import random
-def start():
-    player = input("Enter your bet: [R: Rock, P: Paper, S: Scissor] ")
-    player = player.lower()
-
+def play():
+    player = input("Enter your bet: [R: Rock, P: Paper, S: Scissor] ").lower()
     computer = random.choice(["r", "p", "s"])
-
     if player == computer:
         print("It's a tie!")
-
     elif is_win(player, computer):
+        print(f"The computer picked {computer}")
         print("You won!")
     else:
         print("You lose!")
@@ -19,5 +16,4 @@ def is_win(player, opponent):
             or (player == "p" and opponent == "r"):
         return True
     return False
-
-start()
+play()
