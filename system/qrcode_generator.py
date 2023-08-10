@@ -11,7 +11,7 @@ def create_qr(text, filename):
     qr.add_data(text)
     qr.make(fit=True)
     # default color
-    img = qr.make_image(fill_color="black", back_color="white")
+    img = qr.make_image(fill_color="#6aff9b", back_color="black")
     img.save(filename)
 
 link = input("Enter your link: ")
