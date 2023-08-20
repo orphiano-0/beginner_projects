@@ -10,9 +10,12 @@ def organize_files(source_dir, destination_dir):
         '.jfif': 'Images',
         '.html': 'Sources',
         '.ipynb': 'Sources',
+        '.py': 'Sources',
         '.ppt': 'Files',
         '.json': 'Sources',
+        '.java': 'Sources',
         '.zip': 'Archives',
+        '.svg': 'Images',
         '.rar': 'Archives',
         '.webp': 'Images',
         '.pdf': 'Files',
@@ -23,6 +26,8 @@ def organize_files(source_dir, destination_dir):
         '.mov': 'Videos',
         '.mp4': 'Videos',
         '.m4a': 'Videos',
+        '.ico': 'Images',
+        '.md': 'Files'
 
         # You can add more file formats and corresponding folder names as needed
     }
@@ -44,9 +49,9 @@ def organize_files(source_dir, destination_dir):
 
 if __name__ == "__main__":
     # Any directory file you want to organize
-    source_directory = "C:\\Users\\0000\\-----"
+    source_directory = "C:\\path\\directory\\folder"
     # Destination of the organized folders
-    destination_directory = "C:\\Users\\0000\\-----"
+    destination_directory = "C:\\path\\directory\\folder"
 
     organize_files(source_directory, destination_directory)
     print("File format organizer has completed.")
